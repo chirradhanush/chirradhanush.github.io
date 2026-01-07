@@ -1,4 +1,4 @@
-/* Reset default styles */
+/* Reset & global */
 * {
   margin: 0;
   padding: 0;
@@ -7,65 +7,69 @@
 }
 
 body {
-  background-color: #f4f4f4;
+  background-color: #f4f4f9;
   color: #333;
   line-height: 1.6;
 }
 
-/* Header styling */
+/* Header */
 header {
-  background-color: #222;
-  color: #fff;
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  color: white;
+  padding: 60px 20px;
   text-align: center;
-  padding: 40px 20px;
 }
 
 header h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 10px;
 }
 
 header .tagline {
-  font-size: 1rem;
-  margin-bottom: 15px;
-  color: #ddd;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #e0e0ff;
 }
 
-header .links a {
+header .header-links .btn {
+  display: inline-block;
+  background-color: #fff;
+  color: #4e54c8;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 30px;
   text-decoration: none;
-  color: #1da1f2; /* link color */
-  margin: 0 10px;
-  transition: color 0.3s;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 
-header .links a:hover {
-  color: #0d8ddb;
+header .header-links .btn:hover {
+  background-color: #e0e0ff;
+  color: #222;
+  transform: translateY(-3px);
 }
 
-/* Add separators automatically */
-header .links a:not(:last-child)::after {
-  content: "|";
-  margin-left: 10px;
-}
-
-/* Main content sections */
-main section {
+/* Cards for sections */
+main .card {
   background-color: #fff;
   margin: 20px auto;
-  padding: 20px 25px;
-  border-radius: 8px;
+  padding: 25px 30px;
+  border-radius: 12px;
   max-width: 900px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 main h2 {
   color: #222;
   margin-bottom: 10px;
+  border-bottom: 2px solid #8f94fb;
+  display: inline-block;
+  padding-bottom: 5px;
 }
 
 main h3 {
   color: #444;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 main ul {
@@ -73,6 +77,28 @@ main ul {
   list-style-type: disc;
 }
 
+/* Skills tags */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.skill {
+  background-color: #8f94fb;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transition: transform 0.2s;
+}
+
+.skill:hover {
+  transform: scale(1.1);
+}
+
+/* Resume button */
 .resume-button {
   text-align: center;
   margin: 30px 0;
@@ -80,34 +106,50 @@ main ul {
 
 .resume-button a {
   display: inline-block;
-  background-color: #0077cc;
+  background-color: #4e54c8;
   color: white;
-  padding: 10px 25px;
-  border-radius: 5px;
+  padding: 12px 30px;
+  border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
 }
 
 .resume-button a:hover {
-  background-color: #005a99;
+  background-color: #8f94fb;
+  transform: translateY(-3px);
 }
 
-/* Footer styling */
+/* Footer */
 footer {
   background-color: #222;
-  color: #fff;
+  color: white;
   text-align: center;
   padding: 15px 0;
   margin-top: 40px;
 }
 
 /* Responsive */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   header h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
+
   header .tagline {
-    font-size: 0.9rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  .skill {
+    font-size: 0.8rem;
+  }
+
+  .resume-button a {
+    padding: 10px 20px;
   }
 }
